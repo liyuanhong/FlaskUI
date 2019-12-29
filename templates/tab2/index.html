@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}tab2_index{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+        .link-tab {
+            background-color:#e4e2dd;
+        }
+        .active_left_tab {
+            background-color:#428BCA;
+            color:white;
+        }
+
+        .table>thead>tr>th,.table>tbody>tr>td{
+           _background-color:red;
+        }
+    </style>
+    <!--   切换左边的tab  -->
+    <script type="text/javascript">
+        function swichLeftTab(e){
+            var id = $(e).attr("id")
+            if(id == "login"){
+                $(location).attr('href', "http://" + window.location.host + "/tab2/login");
+            }else if(id == "example"){
+                $(location).attr('href', "http://" + window.location.host + "/tab2/example");
+            }
+        }
+    </script>
+    <!-- 左侧导航添加为可继承模块 -->
+    {% block leftNav %}
+    <div id="container1" class="col-sm-3 col-md-2 sidebar" style="margin-top:50px;width:15%;padding:0px;margin-right:15px;">
+          <ul class="nav nav-sidebar">
+              <li id="login" onclick="swichLeftTab(this)"><a {% if arg.path[1]=="login" %} class="active_left_tab" {% endif %}><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>登录页面演示<span class="sr-only"></span></a></li>
+              <li id="example" onclick="swichLeftTab(this)"><a {% if arg.path[1]=="example" %} class="active_left_tab" {% endif %}><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>简易文本页面</a></li>
+          </ul>
+          <ul class="nav nav-sidebar" style="margin-top:20px;">
+              <li><a><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>其他页面</a></li>
+          </ul>
+    </div>
+    {% endblock %}
+
+    {% block content_01 %}
+    <!--  右边内容区域  -->
+    {% endblock %}
+{% endblock %}
+</div>

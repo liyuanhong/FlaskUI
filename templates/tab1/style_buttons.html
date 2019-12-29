@@ -1,0 +1,57 @@
+{% extends "tab1/index.html" %}
+{% block title %}buttons{% endblock %}
+{% block content_01 %}
+<script src="../../static/js/tab1/style.js"></script>
+<div id="container2" style="width:82%;min-height:750px;float:left;_background:grey;margin-top:50px;">
+    {% block content_02 %}
+    <ul class="nav nav-pills" style="font-size:14px;">
+        <li role="presentation"><a id="style_buttons" {% if arg.path[2]=="" %} class="link-tab" {% endif %} onclick="styleManTab(this)">按钮</b></a></li>
+        <li role="presentation"><a id="style_labels" {% if arg.path[2]=="labels" %} class="link-tab" {% endif %} onclick="styleManTab(this)">标签</a></li>
+        <li role="presentation"><a id="style_tables" {% if arg.path[2]=="tables" %} class="link-tab" {% endif %} onclick="styleManTab(this)">表格</a></li>
+    </ul>
+    {% endblock %}
+    {% block content_1 %}
+    <div id="container3" style="width:100%;min-height:750px;float:left;_background:green;margin-top:10px;">
+        <div class="page-header">
+            <h1>Buttons</h1>
+            <p>
+                <button type="button" class="btn btn-lg btn-default">Default</button>
+                <button type="button" class="btn btn-lg btn-primary">Primary</button>
+                <button type="button" class="btn btn-lg btn-success">Success</button>
+                <button type="button" class="btn btn-lg btn-info">Info</button>
+                <button type="button" class="btn btn-lg btn-warning">Warning</button>
+                <button type="button" class="btn btn-lg btn-danger">Danger</button>
+                <button type="button" class="btn btn-lg btn-link">Link</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-sm btn-default">Default</button>
+                <button type="button" class="btn btn-sm btn-primary">Primary</button>
+                <button type="button" class="btn btn-sm btn-success">Success</button>
+                <button type="button" class="btn btn-sm btn-info">Info</button>
+                <button type="button" class="btn btn-sm btn-warning">Warning</button>
+                <button type="button" class="btn btn-sm btn-danger">Danger</button>
+                <button type="button" class="btn btn-sm btn-link">Link</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-xs btn-default">Default</button>
+                <button type="button" class="btn btn-xs btn-primary">Primary</button>
+                <button type="button" class="btn btn-xs btn-success">Success</button>
+                <button type="button" class="btn btn-xs btn-info">Info</button>
+                <button type="button" class="btn btn-xs btn-warning">Warning</button>
+                <button type="button" class="btn btn-xs btn-danger">Danger</button>
+                <button type="button" class="btn btn-xs btn-link">Link</button>
+            </p>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+{% endblock %}

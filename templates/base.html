@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="../../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../../static/bootstrap-3.3.7-dist/css/other/docs.css" rel="stylesheet">
+    <script src="../../static/jquery/jquery-3.4.1.js"></script>
+    <script src="../../static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../static/js/index.js"></script>
+
+</head>
+<body>
+{% block top %}
+<div class="top_nav">
+    <div style="background:#222222;height:50px;"></div>
+    <div style="width: 70%;margin: 0 auto">
+        <ul class="nav nav-tabs" style="font-size:18px;">
+            <li role="presentation" {% if arg.path[0]=="tab1" %} class="active" {% endif %}><a onclick="swichTap(this)" id="tab1">案例</a></li>
+            <li role="presentation" {% if arg.path[0]=="tab2" %} class="active" {% endif %}><a onclick="swichTap(this)" id="tab2">演示页面</a></li>
+            <li role="presentation" {% if arg.path[0]=="other" %} class="active" {% endif %}><a onclick="swichTap(this)" id="otherTab">其他</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+    {% block content %}
+    <div style="width:100%;min-height:750px;background-color:gray;">
+
+    </div>
+    {% endblock %}
+
+    {% block bottom %}
+    <div style="width:100%;height:80px;background-color:grey;float:left;margin-top:10px;">
+    {% endblock %}
+
+    </div>
+</div>
+</body>
+</html>

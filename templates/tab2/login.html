@@ -1,0 +1,33 @@
+{% extends "tab2/index.html" %}
+{% block title %}login{% endblock %}
+{% block content_01 %}
+<script src="../../static/js/tab1/style.js"></script>
+<style>
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+</style>
+<div id="container2" style="width:82%;min-height:750px;float:left;_background:grey;margin-top:50px;">
+    {% block content_1 %}
+    <div id="container3" style="width:100%;min-height:750px;float:left;_background:green;margin-top:10px;">
+        <div class="container">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </form>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+{% endblock %}
